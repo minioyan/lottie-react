@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Lottie from 'react-lottie';
+import rocketLaunchAnimation from './animation/rocket-launch.json';
+import manWorkingAnimation from './animation/man-working.json';
 
-function App() {
+export const App = () => {
+  const rocketLaunchAnimationOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: rocketLaunchAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
+  const manWorkingAnimationOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: manWorkingAnimation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Lottie options={rocketLaunchAnimationOptions} height={400} width={400} />
+      <Lottie options={manWorkingAnimationOptions} height={400} width={400} />
     </div>
   );
-}
+};
 
 export default App;
